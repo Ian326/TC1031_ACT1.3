@@ -19,7 +19,7 @@ int main(int argc, char *argv[]) {
   ofstream outputFile;
 
   int firstNumber;         // Numero de registros a buscar
-  string tempLine, search; // Para pasar del archivo a leer a un vector
+  string tempLine, search1; // Para pasar del archivo a leer a un vector
   vector<string> datos, line1;
 
   inputFile.open(argv[1], ios::in);
@@ -39,7 +39,7 @@ int main(int argc, char *argv[]) {
     line1.push_back(tempLine);
   }
 
-  search = line1[1];
+  search1 = line1[1];
   vector<string> datos1;
 
 
@@ -47,8 +47,9 @@ int main(int argc, char *argv[]) {
     datos1.push_back(datos[i]);
   }
 
-  vector <int> dayValue = line2string(datos);
-  vector<string> output = selectionSort(dayValue,datos1);
+  vector<string> datosFiltrados = search(datos1,search1);
+  vector <int> dayValue = line2string(datosFiltrados);
+  vector<string> output = selectionSort(dayValue,datosFiltrados);
 
   for (int i = 0; i < output.size(); i++) {
     outputFile << output[i] << endl;

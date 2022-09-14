@@ -28,6 +28,19 @@
 
 using namespace std;
 
+vector<string> search(vector <string> datos1, string search1){
+
+  vector<string> datosFiltrados;
+
+  for(int i=0;i < datos1.size();i++){
+    int found = datos1[i].find(search1);
+    if(found!=datos1[i].npos){
+      datosFiltrados.push_back(datos1[i]);
+    }
+  }
+  return datosFiltrados;
+}
+
 vector<string> selectionSort(vector <int> &dayValue, vector <string> &datos1){
 
   vector <int> x = dayValue;
@@ -149,7 +162,7 @@ vector<int> line2string(vector<string> &data){
 
   vector<string> datePlusHour;
 
-  for(int i=1; i<data.size(); i++){
+  for(int i=0; i<data.size(); i++){
     string tempLine = data[i];
     stringstream cinData(tempLine);
     while(getline(cinData,tempLine,' ')){
