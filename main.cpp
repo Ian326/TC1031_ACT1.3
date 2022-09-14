@@ -48,7 +48,7 @@ int main(int argc, char *argv[]) {
   }
 
   vector<string> datosFiltrados = search(datos1,search1);
-  vector <int> dayValue = line2string(datosFiltrados);
+  vector<int> dayValue = line2string(datosFiltrados);
   vector<string> output = selectionSort(dayValue,datosFiltrados);
 
   for (int i = 0; i < output.size(); i++) {
