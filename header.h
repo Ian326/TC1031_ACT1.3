@@ -41,7 +41,7 @@ vector<string> search(vector <string> datos1, string search1){
   return datosFiltrados;
 }
 
-vector<string> selectionSort(vector <int> &dayValue, vector <string> &datos1){
+vector<string> selectionSort(vector<int> &dayValue, vector <string> &datos1){
 
   vector <int> x = dayValue;
   vector <string> y = datos1;
